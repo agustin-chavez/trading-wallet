@@ -1,6 +1,6 @@
 # Trading Wallet - Investment Portfolio Manager
 
-Trading Wallet is a web application developed in Python using the Flask framework and an SQLite database to manage user profiles and investment portfolios. The application allows users to register, log in, log out, view their profile, and manage their investment portfolio.
+Trading Wallet is a web application developed in Python using the Flask framework and an SQLite3 database to manage user profiles and investment portfolios. The application allows users to register, log in, log out, view their profile, and manage their investment portfolio.
 
 ## Features
 
@@ -29,6 +29,9 @@ To stop the application, press `Ctrl + C` in the terminal, and then run:
   ```bash
   docker-compose down
   ```
+
+### Database
+<img width="708" alt="database-trading-wallet" src="https://github.com/agustin-chavez/trading-wallet/assets/39955956/baa710e1-977b-434a-a0d2-d9e00c2e30ec">
 
 
 ## License
