@@ -19,11 +19,10 @@ Trading Wallet is a web application developed in Python using the Flask framewor
   ```bash
   git clone https://github.com/tu-usuario/trading-wallet.git
   cd trading-wallet
-  docker-compose build
   docker-compose up
   ```
 
-The Flask application will be accessible at [http://localhost:3000/](http://localhost:3000/).
+The Flask application will be accessible at [http://localhost:5001/](http://localhost:5001/).
 
 To stop the application, press `Ctrl + C` in the terminal, and then run:
   ```bash
