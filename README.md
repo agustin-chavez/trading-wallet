@@ -2,75 +2,33 @@
 
 Trading Wallet is a web application developed in Python using the Flask framework and an SQLite database to manage user profiles and investment portfolios. The application allows users to register, log in, log out, view their profile, and manage their investment portfolio.
 
-## Requirements
+## Features
 
-- Python 3.x
-- Flask
-- SQLite3
+- Authentication / Authorization
+- Account / Profile
+- Night mode
+- Internationalization
 
-## Installation
+## Set Up
 
-1. Clone the repository:
-```bash
-git clone https://github.com/your-username/trading-wallet.git
-```
+### Prerequisites
+- [Docker](https://www.docker.com/) installed on your machine.
 
+### Run
 
-3. Navigate to the project directory:
-
-```bash
-cd trading-wallet
-```
-
-
-3. Create and activate a virtual environment (optional but recommended):
-```bash
-python -m venv venv
-```
-
-- On Windows:
   ```bash
-  venv\Scripts\activate
+  git clone https://github.com/tu-usuario/trading-wallet.git
+  cd trading-wallet
+  docker-compose build
+  docker-compose up
   ```
 
-- On Linux/Mac:
+The Flask application will be accessible at [http://localhost:3000/](http://localhost:3000/).
+
+To stop the application, press `Ctrl + C` in the terminal, and then run:
   ```bash
-  source venv/bin/activate
+  docker-compose down
   ```
-
-4. Install dependencies:
-
-```bash
-pip install -r requirements.txt
-```
-
-
-## Configuration
-
-1. Copy the example configuration file:
-
-```bash
-cp config.example.py config.py
-```
-
-2. Open `config.py` and adjust the configuration as needed.
-
-## Execution
-
-1. Start the application:
-
-```bash
-python app.py
-```
-
-
-2. Open your browser and visit http://localhost:5000.
-
-## Usage
-
-1. Register as a new user.
-2. Log in with your credentials.
-3. Explore the list of financial assets and manage your investment portfolio.
 
 
 ## License

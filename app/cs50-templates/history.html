@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Holdings
+{% endblock %}
+
+{% block main %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th class="text-start">Symbol</th>
+                <th class="text-end">Shares</th>
+                <th class="text-end">Price</th>
+                <th class="text-end">Transacted</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if transactions %}
+                {% for transaction in transactions %}
+                <tr>
+                    <td class="text-start"> {{ transaction.symbol }}</td>
+                    <td class="text-end"> {{ transaction.shares }}</td>
+                    <td class="text-end"> {{ usd(transaction.price) }}</td>
+                    <td class="text-end"> {{ transaction.transaction_date }}</td>
+                </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td class="border-0 fw-bold text-center" colspan="4">No Transactions yet...</td>
+                </tr>
+            {% endif %}
+        </tbody>
+    </table>
+{% endblock %}
