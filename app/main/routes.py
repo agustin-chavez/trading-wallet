@@ -1,7 +1,7 @@
 from flask import Blueprint
 from flask import render_template, request
 
-from app.models import Post
+from app.models import Holding
 
 main = Blueprint('main', __name__)
 
@@ -10,6 +10,6 @@ main = Blueprint('main', __name__)
 @main.route("/home")
 def home():
     page = request.args.get('page', default=1, type=int)
-    posts = Post.query.order_by(Post.date_posted.asc()).paginate(per_page=3, page=page)
-    return render_template("home.html", posts=posts)
+    holdings = Holding.query.paginate(per_page=3, page=page)
+    return render_template("home.html", holdings=holdings)
 

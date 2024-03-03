@@ -11,7 +11,7 @@ pip install --upgrade pip
 pip install -r requirements.txt
 
 export DEBUG="True"
-export SQLALCHEMY_DATABASE_URI="sqlite:///site.db"
+export SQLALCHEMY_DATABASE_URI="sqlite:///trading-wallet.db"
 export SECRET_KEY="<SECRET_KEY_FOR_SESSIONS_SECURITY>"
 export EMAIL_USER="<EMAIL_FOR_RESET_PASSWORD_SIMULATION>"
 export EMAIL_PASS="<PASS_FOR_RESET_PASSWORD_SIMULATION>"

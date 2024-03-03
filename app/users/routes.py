@@ -3,7 +3,7 @@ from flask import render_template, url_for, redirect, flash, request
 from flask_login import login_user, current_user, logout_user, login_required
 
 from app import db, bcrypt
-from app.models import Post, User
+from app.models import Holding, User
 from app.users.forms import RegistrationForm, LoginForm, UpdateAccountForm, ResetPasswordForm, RequestResetForm
 from app.users.utils import send_reset_email, save_picture
 
@@ -105,11 +105,10 @@ def reset_token(token):
 
 
 @users.route("/user/<string:username>")
-def user_posts(username):
+def user_holdings(username):
     page = request.args.get('page', default=1, type=int)
     user = User.query.filter_by(username=username).first_or_404()
-    posts = Post.query \
-        .filter_by(author=user) \
-        .order_by(Post.date_posted.asc()) \
+    holdings = Holding.query \
+        .filter_by(user=user) \
         .paginate(per_page=5, page=page)
-    return render_template("user_posts.html", posts=posts, user=user)
+    return render_template("user_holdings.html", holdings=holdings, user=user)

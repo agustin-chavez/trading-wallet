@@ -2,20 +2,19 @@
 
 {% block content %}
     <article class="media content-section">
-        <img src="{{ url_for('static', filename='profile_pics/' + post.author.image_file) }}" class="rounded-circle article-img"/>
+        <img src="{{ url_for('static', filename='profile_pics/' + holding.user.image_file) }}" class="rounded-circle article-img"/>
         <div class="media-body">
             <div class="article-metadata">
-                <a class="mr-2" href="{{ url_for('users.user_posts', username=post.author.username) }}">{{ post.author.username }}</a>
-                <small class="text-muted">{{ post.date_posted.strftime('%Y-%m-%d') }}</small>
-                {% if post.author == current_user %}
+                <a class="mr-2" href="{{ url_for('users.user_holdings', username=holding.author.username) }}">{{ holding.author.username }}</a>
+                {% if holding.author == current_user %}
                     <div>
-                        <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{{ url_for('posts.update_post', post_id=post.id) }}">Update</a>
+                        <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{{ url_for('holdings.update_holding', holding_id=holding.id) }}">Update</a>
                         <button type="button" class="btn btn-danger btn-sm m-1" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete</button>
                     </div>
                 {% endif %}
             </div>
-            <h2 class="article-title">{{ post.title }}</h2>
-            <p class="article-content">{{ post.content }}</p>
+            <h2 class="article-title">{{ holding.symbol }}</h2>
+            <p class="article-content">{{ holding.shares }}</p>
         </div>
     </article>
 
@@ -30,7 +29,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <form action="{{ url_for('posts.delete_post', post_id=post.id) }}" method="POST">
+              <form action="{{ url_for('holdings.delete_holding', holding_id=holding.id) }}" method="POST">
                 <input class="btn btn-danger" type="submit" value="Delete">
               </form>
             </div>

@@ -1,32 +1,31 @@
 {% extends "layout.html" %}
 
 {% block content %}
-    {% for post in posts.items %}
+    {% for holding in holdings.items %}
         <article class="media content-section">
             <div class="article-metadata">
-                <img src="{{ url_for('static', filename='profile_pics/' + post.author.image_file) }}"
+                <img src="{{ url_for('static', filename='profile_pics/' + holding.user.image_file) }}"
                      class="rounded-circle article-img"/>
                 <span>
                     by
                     <a class="mr-2"
-                       href="{{ url_for('users.user_posts', username=post.author.username) }}">{{ post.author.username }}</a>
+                       href="{{ url_for('users.user_holdings', username=holding.user.username) }}">{{ holding.user.username }}</a>
                 </span>
-                <small class="text-muted mb-4">on {{ post.date_posted.strftime('%Y-%m-%d') }}</small>
             </div>
 
             <div class="media-body">
-                <h2><a class="article-title" href="{{ url_for('posts.post', post_id=post.id) }}">{{ post.title }}</a>
+                <h2><a class="article-title" href="{{ url_for('holdings.holding', holding_id=holding.id) }}">{{ holding.symbol }}</a>
                 </h2>
-                <p class="article-content">{{ post.content }}</p>
+                <p class="article-content">{{ holding.shares }}</p>
             </div>
         </article>
     {% endfor %}
 
     <div class="d-flex justify-content-center mb-4 align-items-end">
-        {% for page_num in posts.iter_pages(left_edge=1, right_edge=1, left_current=5, right_current=5) %}
+        {% for page_num in holdings.iter_pages(left_edge=1, right_edge=1, left_current=5, right_current=5) %}
             <div class="m-2">
                 {% if page_num %}
-                    {% if posts.page == page_num %}
+                    {% if holdings.page == page_num %}
                         <a class="btn btn-info" href="{{ url_for('main.home', page=page_num) }}">{{ page_num }}</a>
                     {% else %}
                         <a class="btn btn-outline-info"
