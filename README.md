@@ -1,33 +1,42 @@
 # Trading Wallet - Investment Portfolio Manager
 
-Trading Wallet is a web application developed in Python using the Flask framework and an SQLite3 database to manage user profiles and investment portfolios. The application allows users to register, log in, log out, view their profile, and manage their investment portfolio.
-
-## Features
-
-- Authentication / Authorization
-- Account / Profile
-- Night mode
-- Internationalization
-
-## Set Up
-
-### Prerequisites
-- [Docker](https://www.docker.com/) installed on your machine.
+Trading Wallet is a web application developed in Python using the Flask framework and a SQLite3 database to manage user profiles and investment portfolios. 
 
 ### Run
 
-  ```bash
-  git clone https://github.com/tu-usuario/trading-wallet.git
-  cd trading-wallet
-  docker-compose up
-  ```
+```bash
+python -m venv .venv
+. .venv/bin/activate
+pip install --upgrade pip
+pip install -r requirements.txt
 
-The Flask application will be accessible at [http://localhost:5001/](http://localhost:5001/).
+export DEBUG="True"
+export SQLALCHEMY_DATABASE_URI="sqlite:///site.db"
+export SECRET_KEY="<SECRET_KEY_FOR_SESSIONS_SECURITY>"
+export EMAIL_USER="<EMAIL_FOR_RESET_PASSWORD_SIMULATION>"
+export EMAIL_PASS="<PASS_FOR_RESET_PASSWORD_SIMULATION>"
 
-To stop the application, press `Ctrl + C` in the terminal, and then run:
-  ```bash
-  docker-compose down
-  ```
+python run.py
+```
+
+Go to http://127.0.0.1:5000/
+
+## How to generate a secret with the python interpreter
+
+```python
+import secrets
+
+secrets.token_hex(16)
+```
+
+## Features
+
+- Register, login and logout
+- Flash messages
+- Form validations
+- Encrypted passwords
+- See and update account username, email, password and profile picture
+- 
 
 ### Database
 <img width="708" alt="database-trading-wallet" src="https://github.com/agustin-chavez/trading-wallet/assets/39955956/baa710e1-977b-434a-a0d2-d9e00c2e30ec">
