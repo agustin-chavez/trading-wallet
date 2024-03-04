@@ -29,8 +29,14 @@ def create_app(config_class=Config):
     from app.users.routes import users
     app.register_blueprint(users)
 
-    from app.holdings.routes import holdings
-    app.register_blueprint(holdings)
+    from app.market.routes import market
+    app.register_blueprint(market)
+
+    from app.wallet.routes import wallet
+    app.register_blueprint(wallet)
+
+    from app.transactions.routes import transactions
+    app.register_blueprint(transactions)
 
     from app.errors.handlers import errors
     app.register_blueprint(errors)

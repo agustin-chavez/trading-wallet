@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <main>
+        <h1>Wallet</h1>
+        <div class="balance">
+            <h6>Total Balance: {{ usd(1384) }}</h6>
+
+            <h6>Cash Available: {{ usd(100) }}</h6>
+        </div>
+
+        <h2>Holdings</h2>
+        <table>
+                    <thead>
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col">Ticker</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Value</th>
+                        <th scope="col">Shares</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th class="button-row"><a type="button" class="sell-button">Sell</a></th>
+                        <th>NLFX</th>
+                        <td>Netflix</td>
+                        <td>{{ usd(100) }}</td>
+                        <td>88</td>
+                    </tr>
+                </table>
+    </main>
+{% endblock content %}

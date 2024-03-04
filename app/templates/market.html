@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <main>
+        <div>
+            <h1>Market</h1>
+            <h5 class="grey">Cash Available: {{ usd(200) }}</h5>
+        </div>
+
+        <table>
+            <thead>
+            <tr>
+                <th scope="col"></th>
+                <th scope="col">Ticker</th>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Stock available</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th class="button-row"><a type="button" class="buy-button">Buy</a></th>
+                <th>NLFX</th>
+                <td>Netflix</td>
+                <td>{{ usd(100) }}</td>
+                <td>88</td>
+            </tr>
+        </table>
+    </main>
+{% endblock content %}

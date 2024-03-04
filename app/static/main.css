@@ -1,119 +1,64 @@
 body {
-    background: #fafafa;
-    color: #333333;
-    margin-top: 5rem;
+    padding-bottom: 50px;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    color: #444444;
+.profile-picture {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
-.bg-steel {
-    background-color: #294b77;
+.profile-picture > img {
+    border-radius: 10%;
 }
 
-.site-header .navbar-nav .nav-link {
-    color: #cbd5db;
+.alert-danger {
+    background-color: #9C1A1C;
 }
 
-.site-header .navbar-nav .nav-link:hover {
-    color: #ffffff;
+.alert-success {
+    background-color: #448036;
 }
 
-.site-header .navbar-nav .nav-link.active {
-    font-weight: 500;
-}
-
-.content-section {
-    text-align: center;
-    background: #ffffff;
-    padding: 10px 20px;
-    border: 1px solid #dddddd;
-    border-radius: 3px;
-    margin-bottom: 20px;
-}
-
-.article-title {
-    color: #444444;
-}
-
-a.article-title:hover {
-    color: #294b77;
-    text-decoration: none;
-}
-
-.article-content {
-    white-space: pre-line;
-    padding: 30px;
-}
-
-.article-img {
-    height: 80px;
-    width: 80px;
-    margin: 10px;
-}
-
-.article-metadata {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-bottom: 1px;
-    border-bottom: 1px solid #e3e3e3;
-    margin: 10px;
-}
-
-.article-metadata a:hover {
-    color: #333;
-    text-decoration: none;
-}
-
-.article-svg {
-    width: 25px;
-    height: 25px;
-    vertical-align: middle;
-}
-
-.account-img {
-    height: 125px;
-    width: 125px;
-    margin-right: 20px;
-    margin-bottom: 16px;
-}
-
-.account-heading {
-    font-size: 2.5rem;
-}
-
-a {
-    color: #3a6db0;
-}
-
-.btn-info {
-    color: white;
+.alert-message {
     background-color: #3a6db0;
-    border-color: #3a6db0;
 }
 
-.btn-outline-info {
-    color: #3a6db0;
-    border-color: #3a6db0;
-}
-
-.form-group {
-    text-align: left;
-    margin-bottom: 15px;
-}
-
-.form-control-label {
-    margin-bottom: 5px;
-}
-
-.account-img-uploader {
+.button-row {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+.buy-button {
+    background-color: #3A7734;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: 0
+}
+
+.sell-button {
+    background-color: rgba(169, 28, 28, 0.96);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: 0
+}
+
+.balance {
+    background-color: #3A7734;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+}
+
+h6 {
+    margin-bottom: 0;
+    color: white;
+}
+
+@media (min-width: 768px) {
+    .grid {
+        gap: 5%;
+    }
 }

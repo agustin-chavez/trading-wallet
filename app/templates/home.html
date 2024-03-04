@@ -1,41 +1,20 @@
 {% extends "layout.html" %}
 
 {% block content %}
-    {% for holding in holdings.items %}
-        <article class="media content-section">
-            <div class="article-metadata">
-                <img src="{{ url_for('static', filename='profile_pics/' + holding.user.image_file) }}"
-                     class="rounded-circle article-img"/>
-                <span>
-                    by
-                    <a class="mr-2"
-                       href="{{ url_for('users.user_holdings', username=holding.user.username) }}">{{ holding.user.username }}</a>
-                </span>
+    <main>
+        <div>
+            <h1>Welcome to Trading Wallet </h1>
+            <h4>A minimalist app to manage investments portfolios</h4>
+            <div>
+                <p>🎓 This is my CS50X Final Project </p>
+                <p>🐍 Developed using Flask and Python </p>
+                <p>👨🏻‍💻 I'm Agustin Chávez </p>
+                <p>🇦🇷 From Buenos Aires, Argentina </p>
             </div>
 
-            <div class="media-body">
-                <h2><a class="article-title" href="{{ url_for('holdings.holding', holding_id=holding.id) }}">{{ holding.symbol }}</a>
-                </h2>
-                <p class="article-content">{{ holding.shares }}</p>
+            <div>
+                <a type="button" target="_blank" href="https://github.com/agustin-chavez/trading-wallet" class="secondary">GitHub</a>
             </div>
-        </article>
-    {% endfor %}
-
-    <div class="d-flex justify-content-center mb-4 align-items-end">
-        {% for page_num in holdings.iter_pages(left_edge=1, right_edge=1, left_current=5, right_current=5) %}
-            <div class="m-2">
-                {% if page_num %}
-                    {% if holdings.page == page_num %}
-                        <a class="btn btn-info" href="{{ url_for('main.home', page=page_num) }}">{{ page_num }}</a>
-                    {% else %}
-                        <a class="btn btn-outline-info"
-                           href="{{ url_for('main.home', page=page_num) }}">{{ page_num }}</a>
-                    {% endif %}
-                {% else %}
-                    ...
-                {% endif %}
-            </div>
-        {% endfor %}
-    </div>
-
+        </div>
+    </main>
 {% endblock content %}

@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <main>
+        <h1>Transactions</h1>
+        <table>
+            <thead>
+            <tr>
+                <th scope="col">Date</th>
+                <th scope="col">Operation</th>
+                <th scope="col">Ticker</th>
+                <th scope="col">Name</th>
+                <th scope="col">Shares</th>
+                <th scope="col">Share Price</th>
+                <th scope="col">Fee</th>
+                <th scope="col">Total Price</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th>2024-01-01</th>
+                <td>SELL</td>
+                <td>NLFX</td>
+                <td>Netflix</td>
+                <td>88</td>
+                <td>{{ usd(10) }}</td>
+                <td>{{ usd(6) }}</td>
+                <td>{{ usd(10 * 88 + 6) }}</td>
+            </tr>
+        </table>
+    </main>
+{% endblock content %}

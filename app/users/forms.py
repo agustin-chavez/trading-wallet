@@ -46,11 +46,11 @@ class RegistrationForm(FlaskForm):
 
 
 class LoginForm(FlaskForm):
-    email = StringField(
-        'Email',
+    username = StringField(
+        'Username',
         validators=[
             DataRequired(),
-            Email()
+            Length(min=5, max=20)
         ]
     )
     password = PasswordField(
@@ -67,7 +67,7 @@ class UpdateAccountForm(FlaskForm):
         'Username',
         validators=[
             DataRequired(),
-            Length(min=2, max=20)
+            Length(min=5, max=20)
         ]
     )
     email = StringField(
@@ -78,10 +78,18 @@ class UpdateAccountForm(FlaskForm):
         ]
     )
     picture = FileField(
-        'Update profile picture',
+        'Picture',
         validators=[
             FileAllowed(['jpg', 'jpeg', 'png'])
         ]
+    )
+
+    password = PasswordField(
+        'New Password'
+    )
+
+    confirm_password = PasswordField(
+        'Confirm Password'
     )
 
     submit = SubmitField('Save changes')
@@ -98,31 +106,7 @@ class UpdateAccountForm(FlaskForm):
             if user:
                 raise ValidationError('That email is taken. Please choose a different one.')
 
+    def validate_password(self, password):
+        if password.data != self.confirm_password.data:
+            raise ValidationError('The passwords do not match.')
 
-class RequestResetForm(FlaskForm):
-    email = StringField(
-        'Email',
-        validators=[
-            DataRequired(),
-            Email()
-        ]
-    )
-    submit = SubmitField('Request password reset')
-
-    def validate_email(self, email):
-        user = User.query.filter_by(email=email.data).first()
-        if not user:
-            raise ValidationError('There is no account with that email. You must register first.')
-
-
-class ResetPasswordForm(FlaskForm):
-    password = PasswordField(
-        'Password',
-        validators=[DataRequired()]
-    )
-
-    confirm_password = PasswordField(
-        'Confirm Password',
-        validators=[DataRequired(), EqualTo('password')]
-    )
-    submit = SubmitField('Reset Password')
