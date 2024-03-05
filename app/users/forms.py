@@ -12,7 +12,7 @@ class RegistrationForm(FlaskForm):
         'Username',
         validators=[
             DataRequired(),
-            Length(min=2, max=20)
+            Length(min=4, max=20)
         ]
     )
     email = StringField(
@@ -50,7 +50,7 @@ class LoginForm(FlaskForm):
         'Username',
         validators=[
             DataRequired(),
-            Length(min=5, max=20)
+            Length(min=4, max=20)
         ]
     )
     password = PasswordField(
@@ -67,7 +67,7 @@ class UpdateAccountForm(FlaskForm):
         'Username',
         validators=[
             DataRequired(),
-            Length(min=5, max=20)
+            Length(min=4, max=20)
         ]
     )
     email = StringField(

@@ -32,8 +32,8 @@
         <ul>
             <li><a href="{{ url_for('main.home') }}">Home</a></li>
             {% if current_user.is_authenticated %}
-                <li><a href="{{ url_for('market.paginated') }}">Market</a></li>
                 <li><a href="{{ url_for('wallet.dashboard') }}">Wallet</a></li>
+                <li><a href="{{ url_for('market.paginated') }}">Market</a></li>
                 <li><a href="{{ url_for('transactions.paginated') }}">Transactions</a></li>
             {% endif %}
         </ul>

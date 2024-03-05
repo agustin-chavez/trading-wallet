@@ -25,7 +25,7 @@ def register():
         db.session.add(user)
         db.session.commit()
 
-        flash("Your account has been created! You're now able to log in.", "success")
+        flash("Your account has been created!", "success")
         return redirect(url_for('users.login'))
     return render_template('register.html', title='Register', form=form)
 
@@ -42,7 +42,7 @@ def login():
             if user and bcrypt.check_password_hash(user.password, form.password.data):
                 login_user(user, remember=form.remember.data)
                 next_page = request.args.get('next')
-                return redirect(next_page) if next_page else redirect(url_for('main.home'))
+                return redirect(next_page) if next_page else redirect(url_for('wallet.dashboard'))
             else:
                 flash("Log in unsuccessful. Please check your credentials.", "danger")
         except Exception as e:
@@ -78,13 +78,3 @@ def account():
 
     image_file = url_for('static', filename='profile_pics/' + current_user.image_file)
     return render_template('account.html', title='Account', image_file=image_file, form=form)
-
-
-@users.route("/user/<string:username>")
-def user_holdings(username):
-    page = request.args.get('page', default=1, type=int)
-    user = User.query.filter_by(username=username).first_or_404()
-    holdings = Holding.query \
-        .filter_by(user=user) \
-        .paginate(per_page=5, page=page)
-    return render_template("user_holdings.html", holdings=holdings, user=user)

@@ -4,30 +4,36 @@
     <main>
         <h1>Wallet</h1>
         <div class="balance">
-            <h6>Total Balance: {{ usd(1384) }}</h6>
+            <h6>Total Balance: {{ usd(balance) }}</h6>
 
-            <h6>Cash Available: {{ usd(100) }}</h6>
+            <h6>Cash Available: {{ usd(cash) }}</h6>
         </div>
 
         <h2>Holdings</h2>
         <table>
-                    <thead>
-                    <tr>
-                        <th scope="col"></th>
-                        <th scope="col">Ticker</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Value</th>
-                        <th scope="col">Shares</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <th class="button-row"><a type="button" class="sell-button">Sell</a></th>
-                        <th>NLFX</th>
-                        <td>Netflix</td>
-                        <td>{{ usd(100) }}</td>
-                        <td>88</td>
-                    </tr>
-                </table>
+            <thead>
+            <tr>
+                <th scope="col">Ticker</th>
+                <th scope="col">Name</th>
+                <th scope="col">Value</th>
+                <th scope="col">Shares</th>
+                <th scope="col">Total Value</th>
+                <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+
+
+            {% for holding in holdings %}
+                <tr>
+                    <td>{{ holding.ticker }}</td>
+                    <td>{{ holding.name }}</td>
+                    <td>{{ usd(holding.price) }}</td>
+                    <td>{{ holding.shares }}</td>
+                    <td>{{ usd(holding.shares * holding.price)}}</td>
+                    <td><a type="button" class="sell-button" href="{{ url_for('wallet.sell', symbol=holding.ticker) }}">Sell</a></td>
+                </tr>
+            {% endfor %}
+        </table>
     </main>
 {% endblock content %}

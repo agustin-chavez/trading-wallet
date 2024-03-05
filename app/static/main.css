@@ -13,18 +13,22 @@ body {
 
 .alert-danger {
     background-color: #9C1A1C;
+    color: white;
 }
 
 .alert-success {
     background-color: #448036;
+    color: white;
 }
 
 .alert-message {
     background-color: #3a6db0;
+    color: white;
 }
 
 .buy-button {
     background-color: #3A7734;
+    color: white;
     padding-top: 5px;
     padding-bottom: 5px;
     margin: 0
@@ -32,13 +36,15 @@ body {
 
 .sell-button {
     background-color: rgba(169, 28, 28, 0.96);
+    color: white;
     padding-top: 5px;
     padding-bottom: 5px;
     margin: 0
 }
 
 .balance {
-    background-color: #3A7734;
+    background-color: #3a6db0;
+    color: white;
     display: flex;
     justify-content: space-between;
     padding: 20px;
@@ -53,6 +59,12 @@ h6 {
 
 th:nth-child(2), td:nth-child(2) {
     width: 500px;
+}
+
+.transactions-table {
+    th:nth-child(2), td:nth-child(2) {
+        width: auto;
+    }
 }
 
 .pagination {

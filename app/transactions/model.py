@@ -4,6 +4,7 @@ from app import db
 class Transaction(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     ticker = db.Column(db.String(5), nullable=False)
+    operation = db.Column(db.String(4), nullable=False)
     shares = db.Column(db.Integer, nullable=False)
     share_price = db.Column(db.Integer, nullable=False)
     fee = db.Column(db.Integer, nullable=False)

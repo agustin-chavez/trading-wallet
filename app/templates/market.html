@@ -4,7 +4,7 @@
     <main>
         <div>
             <h1>Market</h1>
-            <h5 class="grey">Cash Available: {{ usd(200) }}</h5>
+            <h5 class="grey">Cash Available: {{ usd(cash) }}</h5>
         </div>
 
         <table>
@@ -24,7 +24,7 @@
                     <td>{{ ticker.name }}</td>
                     <td>{{ usd(ticker.price) }}</td>
                     <td>{{ volume(ticker.stocks) }}</td>
-                    <td><a type="button" class="buy-button">Buy</a></td>
+                    <td><a type="button" class="buy-button" href="{{ url_for('market.buy', symbol=ticker.symbol) }}">Buy</a></td>
                 </tr>
             {% endfor %}
         </table>

@@ -9,4 +9,4 @@ class Ticker(db.Model):
     price = db.Column(db.Integer, nullable=False)
 
     def __repr__(self):
-        return f"Ticker('{self.symbol}', '{self.name}', '{self.stock}', '{self.price}')"
+        return f"Ticker('{self.symbol}', '{self.name}', '{self.stocks}', '{self.price}')"

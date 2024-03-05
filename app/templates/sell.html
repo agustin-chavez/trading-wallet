@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <main class="grid">
+        <div>
+            <h1>{{ ticker.name }} ({{ ticker.symbol }})</h1>
+            <form method="POST" action="">
+                {{ form.hidden_tag() }}
+                <h3>How many stocks do you want to sell?</h3>
+                <h5>Current Price: {{ usd(ticker.price) }} p/stock</h5>
+                <fieldset>
+                    <div>
+                        {{ form.stocks.label }}
+                        {% if form.stocks.errors %}
+                            {{ form.stocks }}
+                            <div>
+                                {% for error in form.stocks.errors %}
+                                    <span> {{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.stocks }}
+                        {% endif %}
+                    </div>
+                    {{ form.submit }}
+                </fieldset>
+            </form>
+        </div>
+        <div>
+        </div>
+    </main>
+{% endblock content %}
