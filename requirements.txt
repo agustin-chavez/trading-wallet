@@ -40,6 +40,9 @@ lxml==5.1.0
 MarkupSafe==2.1.5
 matplotlib-inline==0.1.6
 multitasking==0.0.11
+numpy==1.26.4
+pandas==2.2.1
+pandas-datareader==0.10.0
 parso==0.7.1
 peewee==3.17.1
 pexpect==4.9.0
@@ -59,7 +62,7 @@ requests==2.31.0
 requests-cache==1.2.0
 requests-ratelimiter==0.6.0
 setuptools==69.1.1
-six==1.12.0
+six==1.16.0
 soupsieve==2.5
 spyder-kernels==1.9.3
 SQLAlchemy==2.0.27
