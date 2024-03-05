@@ -10,21 +10,38 @@
         <table>
             <thead>
             <tr>
-                <th scope="col"></th>
                 <th scope="col">Ticker</th>
-                <th scope="col">Name</th>
+                <th scope="col">Company</th>
                 <th scope="col">Price</th>
                 <th scope="col">Stock available</th>
+                <th scope="col">Actions</th>
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <th class="button-row"><a type="button" class="buy-button">Buy</a></th>
-                <th>NLFX</th>
-                <td>Netflix</td>
-                <td>{{ usd(100) }}</td>
-                <td>88</td>
-            </tr>
+            {% for ticker in tickers %}
+                <tr>
+                    <td>{{ ticker.symbol }}</td>
+                    <td>{{ ticker.name }}</td>
+                    <td>{{ usd(ticker.price) }}</td>
+                    <td>{{ volume(ticker.stocks) }}</td>
+                    <td><a type="button" class="buy-button">Buy</a></td>
+                </tr>
+            {% endfor %}
         </table>
+
+        <div class="pagination">
+            {% for page_num in tickers.iter_pages(left_edge=4, right_edge=5, left_current=1, right_current=2) %}
+                {% if page_num %}
+                    {% if tickers.page == page_num %}
+                        <a href="{{ url_for('market.paginated') }}" aria-current="page">{{ page_num }}</a>
+                    {% else %}
+                        <a href="{{ url_for('market.paginated', page=page_num) }}">{{ page_num }}</a>
+                    {% endif %}
+                {% else %}
+                    ...
+                {% endif %}
+            {% endfor %}
+        </div>
+
     </main>
 {% endblock content %}

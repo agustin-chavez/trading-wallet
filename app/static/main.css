@@ -23,12 +23,6 @@ body {
     background-color: #3a6db0;
 }
 
-.button-row {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-}
-
 .buy-button {
     background-color: #3A7734;
     padding-top: 5px;
@@ -55,6 +49,21 @@ body {
 h6 {
     margin-bottom: 0;
     color: white;
+}
+
+th:nth-child(2), td:nth-child(2) {
+    width: 500px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.pagination > a {
+    text-decoration: none;
 }
 
 @media (min-width: 768px) {

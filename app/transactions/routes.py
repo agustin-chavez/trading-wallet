@@ -5,7 +5,7 @@ from flask import (
 )
 
 from app.transactions.model import Transaction
-from app.utils.usd_formatter import usd
+from app.utils.numbers_formatter import usd
 
 transactions = Blueprint('transactions', __name__)
 

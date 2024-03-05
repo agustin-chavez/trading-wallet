@@ -5,7 +5,7 @@ from flask import (
 )
 
 from app.holdings.model import Holding
-from app.utils.usd_formatter import usd
+from app.utils.numbers_formatter import usd
 
 wallet = Blueprint('wallet', __name__)
 
