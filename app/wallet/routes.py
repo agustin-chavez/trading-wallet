@@ -4,8 +4,8 @@ from flask import (
     request,
 )
 
-from app.models import Holding
-from app.helpers import usd
+from app.holdings.model import Holding
+from app.utils.usd_formatter import usd
 
 wallet = Blueprint('wallet', __name__)
 

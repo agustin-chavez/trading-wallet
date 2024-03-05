@@ -4,8 +4,8 @@ from flask import (
     request,
 )
 
-from app.models import Transaction
-from app.helpers import usd
+from app.transactions.model import Transaction
+from app.utils.usd_formatter import usd
 
 transactions = Blueprint('transactions', __name__)
 
