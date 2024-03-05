@@ -3,6 +3,8 @@
 Trading Wallet is a web application developed in Python using the Flask framework and a SQLite3 database to manage user profiles and investment portfolios.
 Minimalist UI developed with PicoCSS.
 
+https://trading-wallet-production.up.railway.app/
+
 ### Run
 
 ```bash
