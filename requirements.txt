@@ -42,6 +42,7 @@ matplotlib-inline==0.1.6
 multitasking==0.0.11
 numpy==1.26.4
 pandas==2.2.1
+pandas-datareader==0.10.0
 parso==0.7.1
 peewee==3.17.1
 pexpect==4.9.0
