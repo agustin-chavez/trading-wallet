@@ -79,4 +79,5 @@ wincertstore==0.2
 WTForms==2.3.3
 wurlitzer==3.0.3
 yfinance==0.2.37
-gunicorn>=20.1.0
+gunicorn==20.0.4
+gunicorn
