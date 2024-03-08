@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
 from wtforms import IntegerField, SubmitField
-from wtforms.validators import DataRequired
+from wtforms.validators import DataRequired, NumberRange
 
 
 class BuyForm(FlaskForm):
@@ -8,6 +8,7 @@ class BuyForm(FlaskForm):
         default=1,
         validators=[
             DataRequired(),
+            NumberRange(1, 999, "Please enter a valid quantity")
         ]
     )
     submit = SubmitField('Buy')
