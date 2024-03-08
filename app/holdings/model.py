@@ -9,4 +9,3 @@ class Holding(db.Model):
 
     def __repr__(self):
         return f"Holding('{self.ticker}', '{self.shares}')"
-

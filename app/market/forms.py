@@ -12,4 +12,3 @@ class BuyForm(FlaskForm):
         ]
     )
     submit = SubmitField('Buy')
-

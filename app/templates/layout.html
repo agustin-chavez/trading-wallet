@@ -1,74 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta name="color-scheme" content="light dark" />
 
-    <!-- Pico -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
-    />
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="color-scheme" content="light dark" />
 
-    <!-- Custom Styles -->
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+        <!-- Pico -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+
+        <!-- Custom Styles -->
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
 
 
-    {% if title %}
-        <title>Trading Wallet - {{ title }}</title>
-    {% else %}
-        <title>Trading Wallet</title>
-    {% endif %}
+        {% if title %}
+            <title>Trading Wallet - {{ title }}</title>
+        {% else %}
+            <title>Trading Wallet</title>
+        {% endif %}
 
-    <script>
-        localStorage.setItem("picoPreferredColorScheme", "{{ session.get("theme") or 'light' }}" )
-    </script>
-</head>
-<body class="container">
-<header>
-    <nav>
-        <ul>
-            <li><a href="{{ url_for('main.home') }}">Home</a></li>
-            {% if current_user.is_authenticated %}
-                <li><a href="{{ url_for('wallet.dashboard') }}">Wallet</a></li>
-                <li><a href="{{ url_for('market.paginated') }}">Market</a></li>
-                <li><a href="{{ url_for('transactions.paginated') }}">Transactions</a></li>
-            {% endif %}
-        </ul>
+        <script>
+            localStorage.setItem("picoPreferredColorScheme", "{{ session.get("
+                theme ") or 'light' }}")
+        </script>
+    </head>
 
-        <ul>
-            {% if current_user.is_authenticated %}
-                <li><a href="{{ url_for('users.account') }}">Account</a></li>
-                <li><a href="{{ url_for('users.logout') }}">Logout</a></li>
-            {% else %}
-                <li><a href="{{ url_for('users.login') }}">Login</a></li>
-                <li><a href="{{ url_for('users.register') }}">Register</a></li>
-            {% endif %}
+    <body class="container">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('main.home') }}">Home</a></li>
+                    {% if current_user.is_authenticated %}
+                        <li><a href="{{ url_for('wallet.dashboard') }}">Wallet</a></li>
+                        <li><a href="{{ url_for('market.paginated') }}">Market</a></li>
+                        <li><a href="{{ url_for('transactions.paginated') }}">Transactions</a></li>
+                    {% endif %}
+                </ul>
 
-            <li><a href="{{ url_for('main.toggle_theme', current_page=request.path) }}">💡</a></li>
-        </ul>
-    </nav>
-</header>
+                <ul>
+                    {% if current_user.is_authenticated %}
+                        <li><a href="{{ url_for('users.account') }}">Account</a></li>
+                        <li><a href="{{ url_for('users.logout') }}">Logout</a></li>
+                    {% else %}
+                        <li><a href="{{ url_for('users.login') }}">Login</a></li>
+                        <li><a href="{{ url_for('users.register') }}">Register</a></li>
+                    {% endif %}
 
-<main>
-    <div>
-        <div>
-            {% with messages = get_flashed_messages(with_categories=true) %}
-                {% if messages %}
-                    {% for category, message in messages %}
-                        <article class="alert-{{ category }}">
-                            {{ message }}
-                        </article>
-                    {% endfor %}
-                {% endif %}
-            {% endwith %}
+                    <li><a href="{{ url_for('main.toggle_theme', current_page=request.path) }}">💡</a></li>
+                </ul>
+            </nav>
+        </header>
 
-            {% block content %}{% endblock %}
-        </div>
-    </div>
-</main>
-<script src="../static/js/minimal-theme-switcher.js"></script>
-</body>
+        <main>
+            <div>
+                <div>
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                        {% if messages %}
+                            {% for category, message in messages %}
+                                <article class="alert-{{ category }}">
+                                    {{ message }}
+                                </article>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+
+                    {% block content %}{% endblock %}
+                </div>
+            </div>
+        </main>
+        <script src="../static/js/minimal-theme-switcher.js"></script>
+    </body>
+
 </html>
