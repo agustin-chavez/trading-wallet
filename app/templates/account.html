@@ -3,7 +3,7 @@
 {% block content %}
     <form method="POST" action="" enctype="multipart/form-data">
 
-        <div class="grid">
+        <div>
             {{ form.hidden_tag() }}
 
             <fieldset>
@@ -60,26 +60,6 @@
                         {{ form.confirm_password }}
                     {% endif %}
                 </div>
-            </fieldset>
-
-            <fieldset>
-                {{ form.picture.label }}
-                <div>
-                        <div class="profile-picture">
-                            <img src="{{ image_file }}" alt="User profile picture">
-                        </div>
-
-                        <div>
-                            <div>
-                                {{ form.picture }}
-                            </div>
-                            {% if form.picture.errors %}
-                                {% for error in form.picture.errors %}
-                                    <article class="alert-danger"> {{ error }}</article><br>
-                                {% endfor %}
-                            {% endif %}
-                        </div>
-                    </div>
             </fieldset>
 
         </div>
