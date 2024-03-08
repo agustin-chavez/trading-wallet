@@ -41,8 +41,25 @@ secrets.token_hex(16)
 - Buy stocks and sell your holdings
 - Historical of transactions
 
-### Database
-<img width="708" alt="database-trading-wallet" src="https://github.com/agustin-chavez/trading-wallet/assets/39955956/baa710e1-977b-434a-a0d2-d9e00c2e30ec">
+
+<img width="1430" alt="home" src="https://github.com/agustin-chavez/trading-wallet/assets/39955956/324fb235-b815-4ef4-83f3-e762325d5436">
+
+![regi](https://github.com/agustin-chavez/trading-wallet/assets/39955956/1a41cd28-0789-442c-ac65-c7027d08d0ab)
+
+<img width="1430" alt="login" src="https://github.com/agustin-chavez/trading-wallet/assets/39955956/07ebca51-d66e-4cc4-ad0c-079ea7cd89cc">
+
+<img width="1430" alt="account-error" src="https://github.com/agustin-chavez/trading-wallet/assets/39955956/7f78760a-fb63-4dc1-b0b2-1ea05c07e347">
+
+<img width="1430" alt="account-success" src="https://github.com/agustin-chavez/trading-wallet/assets/39955956/1875e3fe-169b-40ec-ac1a-ee232b30e062">
+
+<img width="1430" alt="market" src="https://github.com/agustin-chavez/trading-wallet/assets/39955956/970bd780-5f20-484e-a891-a138fba65921">
+
+<img width="1430" alt="buy-error" src="https://github.com/agustin-chavez/trading-wallet/assets/39955956/d3ea94b9-3ae0-4bd2-b695-8c4cb1b401bb">
+
+<img width="1430" alt="buy-success" src="https://github.com/agustin-chavez/trading-wallet/assets/39955956/519c51bb-1004-4ca4-a8e5-e807a0b3651c">
+
+![trs](https://github.com/agustin-chavez/trading-wallet/assets/39955956/fd8e34b0-18ec-4cbb-89d5-1729e468e955)
+
 
 
 ## License
