@@ -5,7 +5,7 @@ from flask_login import login_user, current_user, logout_user, login_required
 from app import db, bcrypt
 from app.users.forms import RegistrationForm, LoginForm, UpdateAccountForm
 from app.users.model import User
-from app.utils.picture_saver import save_picture
+from app.users.picture_saver import save_picture
 
 users = Blueprint('users', __name__)
 
