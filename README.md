@@ -8,7 +8,6 @@ Minimalist UI developed with PicoCSS.
 
 [Trading Wallet APP](https://trading-wallet-production.up.railway.app/)
 
-[Demo Video](https://www.youtube.com/watch?v=nDGJB_pZvuc)
 
 ### Run
 
