@@ -109,3 +109,4 @@ class UpdateAccountForm(FlaskForm):
     def validate_password(self, password):
         if password.data != self.confirm_password.data:
             raise ValidationError('The passwords do not match.')
+

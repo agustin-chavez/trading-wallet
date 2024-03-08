@@ -12,3 +12,4 @@ class SellForm(FlaskForm):
         ]
     )
     submit = SubmitField('Sell')
+

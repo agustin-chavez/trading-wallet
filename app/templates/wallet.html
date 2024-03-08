@@ -12,28 +12,28 @@
         <h2>Holdings</h2>
         <table>
             <thead>
-                <tr>
-                    <th scope="col">Ticker</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Value</th>
-                    <th scope="col">Shares</th>
-                    <th scope="col">Total Value</th>
-                    <th scope="col"></th>
-                </tr>
+            <tr>
+                <th scope="col">Ticker</th>
+                <th scope="col">Name</th>
+                <th scope="col">Value</th>
+                <th scope="col">Shares</th>
+                <th scope="col">Total Value</th>
+                <th scope="col"></th>
+            </tr>
             </thead>
             <tbody>
 
 
-                {% for holding in holdings %}
-                    <tr>
-                        <td>{{ holding.ticker }}</td>
-                        <td>{{ holding.name }}</td>
-                        <td>{{ usd(holding.price) }}</td>
-                        <td>{{ holding.shares }}</td>
-                        <td>{{ usd(holding.shares * holding.price)}}</td>
-                        <td><a type="button" class="sell-button" href="{{ url_for('wallet.sell', symbol=holding.ticker) }}">Sell</a></td>
-                    </tr>
-                {% endfor %}
-            </table>
-        </main>
+            {% for holding in holdings %}
+                <tr>
+                    <td>{{ holding.ticker }}</td>
+                    <td>{{ holding.name }}</td>
+                    <td>{{ usd(holding.price) }}</td>
+                    <td>{{ holding.shares }}</td>
+                    <td>{{ usd(holding.shares * holding.price)}}</td>
+                    <td><a type="button" class="sell-button" href="{{ url_for('wallet.sell', symbol=holding.ticker) }}">Sell</a></td>
+                </tr>
+            {% endfor %}
+        </table>
+    </main>
 {% endblock content %}

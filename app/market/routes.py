@@ -62,8 +62,7 @@ def buy():
                 flash(f"Bought! {symbol} is now on your holdings", "success")
                 return redirect(url_for('wallet.dashboard'))
             else:
-                flash(
-                    f"The total price for {stocks} stocks is {usd(total_price)}. Not enough cash: {usd(current_user.cash)}", "danger")
+                flash(f"The total price for {stocks} stocks is {usd(total_price)}. Not enough cash: {usd(current_user.cash)}", "danger")
         else:
             flash(f"Invalid amount of stocks", "danger")
     return render_template("buy.html", ticker=ticker, usd=usd, form=form)
